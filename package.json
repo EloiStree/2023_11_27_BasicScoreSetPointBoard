@@ -1,0 +1,23 @@
+
+{                                                                                
+  "name": "be.eloistree.basicscoreboardsetpoint",                              
+  "displayName": "Basic Score board Set Poing Match",                        
+  "version": "0.0.1",                         
+  "unity": "2018.1",                             
+  "unityRelease": "",                             
+  "description": "Just a basic score board for game that use set and match.",                         
+  "keywords": ["Script","Tool"],                       
+  "dependencies":{},     
+  "relatedPackages":{},     
+  "samples" : [],     
+  "author" : {
+"name":"",
+"mail":"",
+"url":""},     
+  "repository":{
+"type":"Git",
+"url":"https://github.com/EloiStree/2023_11_27_BasicScoreSetPointBoard.git",
+"footprint":"",
+"revision":""},     
+  "category": "Script"                   
+} 
