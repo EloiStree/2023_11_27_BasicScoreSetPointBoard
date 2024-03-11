@@ -6,27 +6,29 @@ using UnityEngine.Events;
 
 public class BasicIntScoreBoardSetPointMono : MonoBehaviour
 {
-    public int m_roundWinPoint=5;
-    public int m_pointBlue ;
-    public int m_pointRed ;
-    public int m_roundBlue ;
-    public int m_roundRed  ;
+    public int m_roundWinPoint = 5;
+    public int m_pointBlue;
+    public int m_pointRed;
+    public int m_roundBlue;
+    public int m_roundRed;
     public IntEvent m_onPointBlue;
     public IntEvent m_onPointRed;
     public IntEvent m_onRoundBlue;
     public IntEvent m_onRoundRed;
 
     [System.Serializable]
-    public class IntEvent: UnityEvent<int>{}
+    public class IntEvent : UnityEvent<int> { }
 
-    public void PushAll() {
-        m_onPointBlue  .Invoke(m_pointBlue);
-        m_onPointRed   .Invoke(m_pointRed);
-        m_onRoundBlue  .Invoke(m_roundBlue);
-        m_onRoundRed   .Invoke(m_roundRed);
+    public void PushAll()
+    {
+        m_onPointBlue.Invoke(m_pointBlue);
+        m_onPointRed.Invoke(m_pointRed);
+        m_onRoundBlue.Invoke(m_roundBlue);
+        m_onRoundRed.Invoke(m_roundRed);
     }
     [ContextMenu("Reset All")]
-    public void ResetAll() {
+    public void ResetAll()
+    {
         m_pointBlue = 0;
         m_pointRed = 0;
         m_roundBlue = 0;
@@ -35,7 +37,7 @@ public class BasicIntScoreBoardSetPointMono : MonoBehaviour
     }
 
     [ContextMenu("AddPointToBlue ")]
-    public void AddPointToBlue() { m_pointBlue++;CheckForRound(); PushAll(); }
+    public void AddPointToBlue() { m_pointBlue++; CheckForRound(); PushAll(); }
 
     private void CheckForRound()
     {
@@ -61,10 +63,11 @@ public class BasicIntScoreBoardSetPointMono : MonoBehaviour
         PushAll();
     }
 
- 
+
 
     [ContextMenu("AddRoundToRed ")]
-    public void AddRoundToRed() {
+    public void AddRoundToRed()
+    {
         m_roundRed++;
         ResetPoints();
 
@@ -77,4 +80,9 @@ public class BasicIntScoreBoardSetPointMono : MonoBehaviour
         m_pointBlue = 0;
         m_pointRed = 0;
     }
+
+    public void SetPointBlue(int value) { m_pointBlue = value; m_onPointBlue.Invoke(m_pointBlue); }
+    public void SetPointRed(int value) { m_pointRed = value; m_onPointRed.Invoke(m_pointRed); }
+    public void SetRoundBlue(int value) { m_roundBlue = value; m_onRoundBlue.Invoke(m_roundBlue); }
+    public void SetRoundRed(int value) { m_roundRed = value; m_onRoundRed.Invoke(m_roundRed); }
 }
