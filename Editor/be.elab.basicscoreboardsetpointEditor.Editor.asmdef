@@ -1,7 +1,7 @@
 
 {                                                                   
-            "name": "be.eloistree.basicscoreboardsetpointEditor",          
-    "references": ["be.eloistree.basicscoreboardsetpoint"
+            "name": "be.elab.basicscoreboardsetpointEditor",          
+    "references": ["be.elab.basicscoreboardsetpoint"
 ],                                                              
     "optionalUnityReferences": [],                                  
     "includePlatforms": [                                           
